@@ -1,0 +1,26 @@
+buildscript {
+    ext {
+        android_plugin_version = '4.0.0-beta02'
+    }
+
+    repositories {
+        google()
+        jcenter()
+        gradlePluginPortal()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$android_plugin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}
